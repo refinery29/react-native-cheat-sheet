@@ -28,9 +28,13 @@ To make circle all you have to do is use your image width/height and devide it w
 
 Example for 100x100 image:
 
-```javacript
+```Javacript
+// component
 <Image style={styles.image} source={{uri: 'http://placehold.it/100x100'}}/>
+```
 
+``` Javascript
+// styles
 var styles = StyleSheet.create({
   image: {
     height: 100,
