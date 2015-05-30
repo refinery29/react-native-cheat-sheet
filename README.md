@@ -28,7 +28,7 @@ var styles = React.StyleSheet.create({
 ```
 
 # How to make circle image with React Native
-Since `borderRadius` style expect `number` as a value you can't use `borderRadius: 50%`.
+Since `borderRadius` style expects `number` as a value you can't use `borderRadius: 50%`.
 To make circle all you have to do is use your image width/height and devide it with 2.
 
 Example for 100x100 image:
