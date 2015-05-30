@@ -48,3 +48,15 @@ var styles = StyleSheet.create({
   }
 });
 ```
+
+# React Native Image component can have child components
+Because of `HTML` and `<img />` tag it's easy to ignore that React `<Image/>` component can have child components, but it can.
+
+This is how you can do it. If it doesn't look pretty, change image `source` and add styles to make it nicer!
+
+```Javascript
+<Image source={{uri: 'http://placehold.it/300x300'}}>
+  <Image source={{uri: 'http://placehold.it/100x100'}}/>
+  <Text>This is my text</Text>
+</Image>
+```
