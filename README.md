@@ -60,3 +60,10 @@ This is how you can do it. If it doesn't look pretty, change image `source` and 
   <Text>This is my text</Text>
 </Image>
 ```
+
+# Text transform uppercase with React Native styles
+I wasn't able to find react native style that does CSS `text-transform: uppercase;`. To make my `<Text>` component uppercased I've used javascript fallback.
+
+```Javascript
+<Text style={styles.published}>{this.props.myText.toUpperCase()}</Text>
+```
