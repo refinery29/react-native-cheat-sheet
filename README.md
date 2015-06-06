@@ -67,3 +67,39 @@ I wasn't able to find react native style that does CSS `text-transform: uppercas
 ```Javascript
 <Text style={styles.published}>{this.props.myText.toUpperCase()}</Text>
 ```
+
+# React Native Text component `numberOfLines` default value
+Number of lines expects integer to be passed in as specified in [docs](https://facebook.github.io/react-native/docs/text.html#numberoflines).
+
+I've tried using `null` and it works but it logs warning in console: `numberOfLines` expects `number` not `null`.
+Searching react repo for `numberOfLines` didn't help and I just tried out setting it to `0` and it worked out without any wornings.
+
+Example component that is showing just first 10 lines of text and on tap shows the rest.
+
+```javascript
+class Article extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      // initial number of lines
+      numberOfLines: 10
+    }
+  }
+
+  render() {
+    var showMore = this.state.numberOfLines ? <Text style={{color: '#f00'}}>{'SHOW MORE \u25BC'}</Text> : null;
+
+    return (
+      <ScrollView>
+        <TouchableHighlight onPress={() => this.setState({numberOfLines:0})} >
+          <View>
+            <Text numberOfLines={this.state.numberOfLines}>{this.props.whateverLongText.youHave}</Text>
+            {showMore}
+          </View>
+        </TouchableHighlight>
+      </ScrollView>
+    );
+  }
+}
+```
