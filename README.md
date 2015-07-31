@@ -109,6 +109,8 @@ There are quite a few ways to do this, but an easy to use module is [react-nativ
 
 ``` npm install react-native-device --save```
 
+Then, to use in your project:
+
 ``` var Device = require('react-native-device')
     
     if (Device.isIpad()) {
