@@ -103,3 +103,23 @@ class Article extends Component {
   }
 }
 ```
+
+# Get device width and height
+There are quite a few ways to do this, but an easy to use module is [react-native-device](https://www.npmjs.com/package/react-native-device)
+
+```npm install react-native-device --save```
+
+```var Device = require('react-native-device');
+    
+    if (Device.isIpad()) {
+      // return iPad layout
+    } else {
+      // return iPhone layout
+    }
+
+    var deviceWidth = Device.width() // return device width
+    var deviceHeight = Device.height() // return device width
+
+    var deviceKind = Device.kind() // returns kind of device (iPad, iPhone4, iPhone6, etc...)
+
+```
