@@ -126,3 +126,14 @@ Then, to use in your project:
     var deviceKind = Device.kind() // returns kind of device (iPad, iPhone4, iPhone6, etc...)
 
 ```
+
+# Pass inline styles and dynamic styles to element
+If you would like to pasn in a style variable as well as custom inline styling, you can pass in an array: 
+
+```
+
+<View style={[ styles.myStyle, {color:'red'} ]} />
+
+<Text style={[ styles.myText, {width: Device.width} ]} />
+
+'''
