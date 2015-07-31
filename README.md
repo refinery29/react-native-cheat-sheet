@@ -109,7 +109,7 @@ There are quite a few ways to do this, but an easy to use module is [react-nativ
 
 ``` npm install react-native-device --save```
 
-``` var Device = require('react-native-device');
+``` var Device = require('react-native-device')
     
     if (Device.isIpad()) {
       // return iPad layout
