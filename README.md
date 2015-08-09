@@ -111,29 +111,29 @@ There are quite a few ways to do this, but an easy to use module is [react-nativ
 
 Then, to use in your project:
 
-``` 
-    var Device = require('react-native-device');
+```Javascript
+var Device = require('react-native-device');
     
-    if (Device.isIpad()) {
-      // return iPad layout
-    } else {
-      // return iPhone layout
-    }
+if (Device.isIpad()) {
+  // return iPad layout
+  } else {
+  // return iPhone layout
+}
 
-    var deviceWidth = Device.width() // return device width
-    var deviceHeight = Device.height() // return device width
+var deviceWidth = Device.width() // return device width
+var deviceHeight = Device.height() // return device width
 
-    var deviceKind = Device.kind() // returns kind of device (iPad, iPhone4, iPhone6, etc...)
-
-```
-
-# Pass inline styles and dynamic styles to element
-If you would like to pasn in a style variable as well as custom inline styling, you can pass in an array: 
+var deviceKind = Device.kind() // returns kind of device (iPad, iPhone4, iPhone6, etc...)
 
 ```
 
-<View style={[ styles.myStyle, {color:'red'} ]} />
+# Extending and overriding styles with inline styles and how to use dynamic styles
+If you want to override one/more styles defined within `React.StyleSheet.create` you can do it inline.
+Instead of using `style={styles.myStyle}` you can pass in array of style properties:
+
+```Javascript
+
+<View style={[ styles.myStyle, {color:'red'}, {something: 'else} ]} />
 
 <Text style={[ styles.myText, {width: Device.width} ]} />
-
-'''
+```
