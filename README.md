@@ -133,7 +133,7 @@ Instead of using `style={styles.myStyle}` you can pass in array of style propert
 
 ```Javascript
 
-<View style={[ styles.myStyle, {color:'red'}, {something: 'else} ]} />
+<View style={[ styles.myStyle, {color:'red'}, {something: 'else'} ]} />
 
 <Text style={[ styles.myText, {width: Device.width} ]} />
 ```
