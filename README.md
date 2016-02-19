@@ -137,3 +137,10 @@ Instead of using `style={styles.myStyle}` you can pass in array of style propert
 
 <Text style={[ styles.myText, {width: Device.width} ]} />
 ```
+
+# Preventing Image Flash after ActionSheetIOS is used
+Sometimes after a user has shared something on your app via the `ActionSheetIOS` component, images that were previsouly displayed in your app will disappear for a moment before getting re-rendered, causing a flicker. To prevent this you can set the Image's `defaultSource` to the main source. 
+
+```Javascript
+<Image accessibilityLabel='x-icon' style={styles.xIcon} source={requireImage('x-icon')} defaultSource={requireImage('x-icon')} />
+```
