@@ -14,7 +14,7 @@ And of course, feel free to contribute
 7. Then `Command + B` to start a new build
 8. And finally `Command + R` to run the application
 
-If you still see the error `Unrecognized font family` restart your react packager.
+If you still see the error `Unrecognized font family` restart your react packager or add the following to the `AppDelegate.m` in order to print all available fonts: `NSLog (@"Font families: %@", [UIFont familyNames]);`
 
 ### How to use it
 
