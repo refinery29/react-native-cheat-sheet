@@ -72,14 +72,14 @@ I wasn't able to find react native style that does CSS `text-transform: uppercas
 Number of lines expects integer to be passed in as specified in [docs](https://facebook.github.io/react-native/docs/text.html#numberoflines).
 
 I've tried using `null` and it works but it logs warning in console: `numberOfLines` expects `number` not `null`.
-Searching react repo for `numberOfLines` didn't help and I just tried out setting it to `0` and it worked out without any wornings.
+Searching react repo for `numberOfLines` didn't help and I just tried out setting it to `0` and it worked out without any warnings.
 
 Example component that is showing just first 10 lines of text and on tap shows the rest.
 
 ```javascript
 class Article extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       // initial number of lines
