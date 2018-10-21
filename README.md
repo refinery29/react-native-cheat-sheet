@@ -1,4 +1,4 @@
-Since I just started playing around with [React Native](https://facebook.github.io/react-native/) and there are just few resources available online I've decided to created this repo to write down things that I find interesting or I've spent some time googling/figuring out. 
+Since I just started playing around with [React Native](https://facebook.github.io/react-native/) and there are just few resources available online I've decided to created this repo to write down things that I find interesting or I've spent some time googling/figuring out.
 Hope it helps and makes your time with React Native even more fun!
 
 And of course, feel free to contribute
@@ -105,25 +105,17 @@ class Article extends Component {
 ```
 
 # Get device width and height
-There are quite a few ways to do this, but an easy to use module is [react-native-device](https://www.npmjs.com/package/react-native-device)
-
-``` npm install react-native-device --save```
+There are quite a few ways to do this, but an easy to use a native module called  [Dimensions](https://facebook.github.io/react-native/docs/dimensions)
 
 Then, to use in your project:
 
 ```Javascript
-var Device = require('react-native-device');
-    
-if (Device.isIpad()) {
-  // return iPad layout
-  } else {
-  // return iPhone layout
-}
 
-var deviceWidth = Device.width() // return device width
-var deviceHeight = Device.height() // return device width
+import { Dimensions } from 'react-native'
 
-var deviceKind = Device.kind() // returns kind of device (iPad, iPhone4, iPhone6, etc...)
+const { width, height } = Dimensions.get('window')
+
+now you get the device width and height
 
 ```
 
@@ -139,7 +131,7 @@ Instead of using `style={styles.myStyle}` you can pass in array of style propert
 ```
 
 # Preventing Image Flash after ActionSheetIOS is used
-Sometimes after a user has shared something on your app via the `ActionSheetIOS` component, images that were previsouly displayed in your app will disappear for a moment before getting re-rendered, causing a flicker. To prevent this you can set the Image's `defaultSource` to the main source. 
+Sometimes after a user has shared something on your app via the `ActionSheetIOS` component, images that were previsouly displayed in your app will disappear for a moment before getting re-rendered, causing a flicker. To prevent this you can set the Image's `defaultSource` to the main source.
 
 ```Javascript
 <Image accessibilityLabel='x-icon' style={styles.xIcon} source={requireImage('x-icon')} defaultSource={requireImage('x-icon')} />
