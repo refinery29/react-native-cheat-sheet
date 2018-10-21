@@ -1,4 +1,4 @@
-Since I just started playing around with [React Native](https://facebook.github.io/react-native/) and there are just few resources available online I've decided to created this repo to write down things that I find interesting or I've spent some time googling/figuring out. 
+Since I just started playing around with [React Native](https://facebook.github.io/react-native/) and there are just few resources available online I've decided to created this repo to write down things that I find interesting or I've spent some time googling/figuring out.
 Hope it helps and makes your time with React Native even more fun!
 
 And of course, feel free to contribute
@@ -61,6 +61,13 @@ This is how you can do it. If it doesn't look pretty, change image `source` and 
 </Image>
 ```
 
+# Make your images load faster
+You can use the `fadeDuration` prop in React Native images to set the time it takes to load on the screen, you can set it to 0 to make it load asap.
+
+```Javascript
+<Image fadeDuration={0} source={{uri: 'http://placehold.it/300x300'}} />
+```
+
 # Text transform uppercase with React Native styles
 I wasn't able to find react native style that does CSS `text-transform: uppercase;`. To make my `<Text>` component uppercased I've used javascript fallback.
 
@@ -113,7 +120,7 @@ Then, to use in your project:
 
 ```Javascript
 var Device = require('react-native-device');
-    
+
 if (Device.isIpad()) {
   // return iPad layout
   } else {
@@ -139,7 +146,7 @@ Instead of using `style={styles.myStyle}` you can pass in array of style propert
 ```
 
 # Preventing Image Flash after ActionSheetIOS is used
-Sometimes after a user has shared something on your app via the `ActionSheetIOS` component, images that were previsouly displayed in your app will disappear for a moment before getting re-rendered, causing a flicker. To prevent this you can set the Image's `defaultSource` to the main source. 
+Sometimes after a user has shared something on your app via the `ActionSheetIOS` component, images that were previsouly displayed in your app will disappear for a moment before getting re-rendered, causing a flicker. To prevent this you can set the Image's `defaultSource` to the main source.
 
 ```Javascript
 <Image accessibilityLabel='x-icon' style={styles.xIcon} source={requireImage('x-icon')} defaultSource={requireImage('x-icon')} />
